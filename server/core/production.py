@@ -1,12 +1,16 @@
 from .settings import *
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['74.119.195.253', 'cms.2077.xyz']
 
 CSRF_TRUSTED_ORIGINS = ["https://" + host for host in ALLOWED_HOSTS]
 
-REDISCLOUD_URL = config("REDISCLOUD_URL")
+CORS_ALLOWED_ORIGINS = [
+    "https://cms.2077.xyz",
+]
+
+# REDISCLOUD_URL = config("REDISCLOUD_URL")
 
 STATIC_URL = 'staticfiles/'
 
@@ -41,6 +45,6 @@ SECURE_HSTS_PRELOAD = True
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-SECURE_SSL_REDIRECT = True
+# SECURE_SSL_REDIRECT = True
 
 SESSION_COOKIE_SECURE = True

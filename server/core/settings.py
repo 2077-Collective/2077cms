@@ -27,7 +27,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]', '74.119.195.253', 'cms.2077.xyz']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]']
 
 # Application definition
 
@@ -82,13 +82,9 @@ REST_FRAMEWORK = {
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
-    "http://127.0.0.1:8000",
-    "http://74.119.195.253:8000",
-    "http://cms.2077.xyz",
-    "https://cms.2077.xyz",
+    "http://127.0.0.1:8000",    
 ]
 
-CSRF_TRUSTED_ORIGINS = ['http://74.119.195.253', 'http://cms.2077.xyz', 'https://cms.2077.xyz']
 
 ROOT_URLCONF = 'core.urls'
 
@@ -188,13 +184,13 @@ JAZZMIN_SETTINGS = {
     # Title on the login screen (19 chars max) (defaults to current_admin_site.site_header if absent or None)
     "site_header": "2077 Collective",
     # Logo to use for your site, must be present in static files, used for brand on top left
-    "site_logo": "../static/logo.png",
+    "site_logo": "../staticfiles/images/logo.png",
     # Logo to use for your site, must be present in static files, used for login form logo (defaults to site_logo)
-    "login_logo": "../static/logo.png",
+    "login_logo": "../staticfiles/images/logo.png",
     # CSS classes that are applied to the logo above
     "site_logo_classes": "img-circle",
     # Relative path to a favicon for your site, will default to site_logo if absent (ideally 32x32 px)
-    "site_icon": "../static/logo.png",
+    "site_icon": "../staticfiles/images/logo.img",
     # Welcome text on the login screen
     "welcome_sign": "Welcome to the 2077 Collective Admin Section",
     # Copyright on the footer
@@ -242,6 +238,7 @@ JAZZMIN_SETTINGS = {
     "changeform_format_overrides": {
         "auth.user": "collapsible",
         "auth.group": "vertical_tabs",
+        "research.article": "horizontal_tabs_bottom_buttons",
     },
 }
 
